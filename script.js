@@ -11,8 +11,9 @@
     timeZone: 'Asia/Qyzylorda',
   };
   const MUSIC_TRACK_URL = './fdf0540ad697f872d3c43b75ba477dc6_GI4Gf2gK.mp3';
-  // Configure a same-origin backend route when the bot is ready; keep its token on the server.
-  const RSVP_SUBMISSION_ENDPOINT = '/api/rsvp';
+  // Direct Telegram integration, matching the working reference page.
+  const TELEGRAM_BOT_TOKEN = '8963644913:AAFFBH9GkXueN-RoDCrlK4BICdR2Av9weow';
+  const TELEGRAM_CHAT_ID = '7612121485';
 
   const shell = document.getElementById('siteShell');
   const canvas = document.getElementById('invitationCanvas');
@@ -218,23 +219,35 @@
     if (!form.reportValidity()) return;
 
     const submitButton = form.querySelector('.submit-button');
+    const attendance = form.querySelector('input[name="attendance"]:checked')?.value;
+    const attendanceLabels = {
+      yes: 'әрине, келемін',
+      'plus-one': 'жұбыммен келемін',
+      no: 'өкінішке орай, келе алмаймын',
+    };
+    const guestName = form.elements.guestName.value.trim();
+    const message = [
+      'Жаңа тойға жауап',
+      `Аты-жөні: ${guestName}`,
+      `Қатысуы: ${attendanceLabels[attendance]}`,
+    ].join('\n');
+
     submitButton.disabled = true;
     submitButton.setAttribute('aria-busy', 'true');
     status.textContent = 'Жауабыңыз жіберіліп жатыр…';
     status.classList.add('is-visible');
     try {
-      const response = await fetch(RSVP_SUBMISSION_ENDPOINT, {
+      const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          guestName: form.elements.guestName.value.trim(),
-          attendance: form.querySelector('input[name="attendance"]:checked').value,
-        }),
+        body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: message }),
       });
-      if (!response.ok) throw new Error('RSVP submission failed');
+      const result = await response.json();
+      if (!response.ok || result?.ok !== true) throw new Error('Telegram rejected the RSVP');
       status.textContent = 'Рақмет! Жауабыңыз жіберілді.';
+      form.reset();
     } catch {
-      status.textContent = 'Жауап жіберілмеді. Бот уақытша қолжетімсіз, кейінірек қайталап көріңіз.';
+      status.textContent = 'Жауап жіберілмеді. Қайтадан көріңіз немесе той иесіне хабарласыңыз.';
     } finally {
       submitButton.disabled = false;
       submitButton.removeAttribute('aria-busy');
