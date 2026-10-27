@@ -70,10 +70,9 @@
   ];
   const eventMonth = kazakhMonths[event.month - 1];
   const capitalizeKazakh = (value) => value.slice(0, 1).toLocaleUpperCase('kk-KZ') + value.slice(1);
-  const eventDateShort = `${event.day} ${eventMonth} ${event.year}`;
   document.getElementById('pageTitle').textContent = 'Мерей Той';
   document.getElementById('pageDescription').content = 'Мерей тойына шақыру';
-  document.getElementById('calendarEventDate').textContent = eventDateShort;
+  document.getElementById('calendarEventDate').textContent = 'Таймер';
   document.getElementById('calendarMonth').textContent = capitalizeKazakh(eventMonth);
   const countdownParts = {
     days: countdownRoot.querySelector('[data-count="days"]'),
