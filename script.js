@@ -72,7 +72,6 @@
   const capitalizeKazakh = (value) => value.slice(0, 1).toLocaleUpperCase('kk-KZ') + value.slice(1);
   document.getElementById('pageTitle').textContent = 'Мерей Той';
   document.getElementById('pageDescription').content = 'Мерей тойына шақыру';
-  document.getElementById('calendarEventDate').textContent = 'Таймер';
   document.getElementById('calendarMonth').textContent = capitalizeKazakh(eventMonth);
   const countdownParts = {
     days: countdownRoot.querySelector('[data-count="days"]'),
@@ -126,7 +125,7 @@
     ['.paper-layer--rsvp', 0], ['.paper-layer--footer', 0],
     ['.countdown h2', 0], ['.countdown-unit', 100], ['.countdown-units i', 170],
     ['.welcome-title', 0], ['.invitation-copy', 110], ['.family-signoff', 230],
-    ['.calendar-date', 0], ['.calendar-month', 70], ['.calendar-grid', 0], ['.weekdays', 150],
+    ['.calendar-month', 70], ['.calendar-grid', 0], ['.weekdays', 150],
     ['.days li:not(:empty)', 200, 16],
     ['.venue-title', 0], ['.venue-address', 100], ['.venue-hint', 210], ['.map-button', 320],
     ['.rsvp-title', 0], ['.guest-label', 100], ['.guest-input-wrap', 150],

@@ -113,7 +113,6 @@ html.opening-active, body.opening-active { overflow: hidden; }
 .invitation-copy p { margin: 0; line-height: 40px; }
 .family-signoff { position: absolute; left: 353px; top: 760px; margin: 0; font-size: 64px; line-height: 1; white-space: nowrap; }
 
-.calendar-date { position: absolute; left: 283px; top: 974px; width: 485px; height: 99px; margin: 0; color: var(--warm-ink); font-size: 128px; line-height: 1; text-align: center; white-space: nowrap; }
 .calendar-month { position: absolute; left: 329px; top: 1305px; width: 342px; height: 99px; margin: 0; color: var(--warm-ink); font-size: 128px; line-height: 1; text-align: center; white-space: nowrap; }
 .calendar-grid { position: absolute; left: 233px; top: 1415px; width: 530px; height: 304px; font-family: "KZ Balmoral", "Great Vibes", cursive; }
 .weekdays {
@@ -131,7 +130,7 @@ html.opening-active, body.opening-active { overflow: hidden; }
 .event-day img { position: absolute; z-index: 0; width: 43px; height: 34px; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 
 .countdown {
-  position: absolute; left: 175px; top: 66px; width: 650px; min-height: 180px;
+  position: absolute; left: 175px; top: 974px; width: 650px; min-height: 180px;
   color: var(--ink); text-align: center; font-family: "KZ Balmoral", "Great Vibes", cursive;
 }
 .countdown h2 { margin: 0 0 14px; color: var(--warm-ink); font-size: 52px; font-weight: 400; line-height: 1; }
