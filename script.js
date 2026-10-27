@@ -1,7 +1,7 @@
 (() => {
   const designWidth = 1000;
-  const desktopDesignHeight = 4883;
-  const mobileDesignHeight = 5520;
+  const desktopDesignHeight = 3204;
+  const mobileDesignHeight = 3841;
   const event = {
     year: 2026,
     month: 12,
@@ -68,28 +68,11 @@
     'қаңтар', 'ақпан', 'наурыз', 'сәуір', 'мамыр', 'маусым',
     'шілде', 'тамыз', 'қыркүйек', 'қазан', 'қараша', 'желтоқсан',
   ];
-  const kazakhWeekdays = ['жексенбі', 'дүйсенбі', 'сейсенбі', 'сәрсенбі', 'бейсенбі', 'жұма', 'сенбі'];
   const eventMonth = kazakhMonths[event.month - 1];
-  const eventWeekday = kazakhWeekdays[new Date(Date.UTC(event.year, event.month - 1, event.day)).getUTCDay()];
   const capitalizeKazakh = (value) => value.slice(0, 1).toLocaleUpperCase('kk-KZ') + value.slice(1);
   const eventDateShort = `${event.day} ${eventMonth} ${event.year}`;
-  const eventDateLong = `${eventDateShort} жыл`;
-  const eventTimeLabel = `сағат ${String(event.hour).padStart(2, '0')}:${String(event.minute).padStart(2, '0')}`;
-  const eventIsoDate = `${event.year}-${String(event.month).padStart(2, '0')}-${String(event.day).padStart(2, '0')}`;
-  document.getElementById('pageTitle').textContent = `Мерей Той — ${eventDateShort}`;
-  document.getElementById('pageDescription').content = `${eventDateLong} — Мерей тойына шақыру`;
-  document.getElementById('openingDate').textContent = `${String(event.day).padStart(2, '0')} • ${String(event.month).padStart(2, '0')} • ${event.year}`;
-  document.getElementById('coverWeekday').textContent = capitalizeKazakh(eventWeekday);
-  document.getElementById('coverDay').textContent = String(event.day);
-  document.getElementById('coverMonth').textContent = capitalizeKazakh(eventMonth);
-  document.getElementById('coverYear').textContent = String(event.year);
-  document.getElementById('eventDateText').textContent = eventDateLong;
-  document.getElementById('eventDateText').dateTime = eventIsoDate;
-  document.getElementById('eventDateText').dataset.timeZone = event.timeZone;
-  const eventTimeElement = document.getElementById('eventTimeText');
-  eventTimeElement.textContent = eventTimeLabel;
-  eventTimeElement.dateTime = `${eventIsoDate}T${String(event.hour).padStart(2, '0')}:${String(event.minute).padStart(2, '0')}`;
-  eventTimeElement.dataset.timeZone = event.timeZone;
+  document.getElementById('pageTitle').textContent = 'Мерей Той';
+  document.getElementById('pageDescription').content = 'Мерей тойына шақыру';
   document.getElementById('calendarEventDate').textContent = eventDateShort;
   document.getElementById('calendarMonth').textContent = capitalizeKazakh(eventMonth);
   const countdownParts = {
@@ -142,15 +125,13 @@
   const revealTargets = [
     ['.paper-layer--top', 0], ['.paper-layer--calendar', 0],
     ['.paper-layer--rsvp', 0], ['.paper-layer--footer', 0],
-    ['.cover-frame', 0], ['.flower--top', 70], ['.cover-title', 150],
-    ['.cover-date', 260], ['.flower--lower', 100],
     ['.countdown h2', 0], ['.countdown-unit', 100], ['.countdown-units i', 170],
     ['.welcome-title', 0], ['.invitation-copy', 110], ['.family-signoff', 230],
     ['.calendar-date', 0], ['.calendar-month', 70], ['.calendar-grid', 0], ['.weekdays', 150],
     ['.days li:not(:empty)', 200, 16],
     ['.venue-title', 0], ['.venue-address', 100], ['.venue-hint', 210], ['.map-button', 320],
     ['.rsvp-title', 0], ['.guest-label', 100], ['.guest-input-wrap', 150],
-    ['.attendance-choice', 220], ['.submit-button', 390], ['.closing p', 100],
+    ['.attendance-choice', 220], ['.submit-button', 390],
   ];
   revealTargets.forEach(([selector, baseDelay, stagger = 38]) => {
     document.querySelectorAll(selector).forEach((element, index) => {
