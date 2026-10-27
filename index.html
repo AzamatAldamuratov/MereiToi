@@ -8,7 +8,7 @@
     <title id="pageTitle">Мерей Той</title>
     <link rel="icon" type="image/svg+xml" href="assets/calendar-heart.svg">
     <link rel="preload" href="assets/fonts/GreatVibes.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=calendar-event-details">
     <script src="script.js" defer></script>
   </head>
   <body class="opening-active">
@@ -36,10 +36,13 @@
         </section>
 
         <section class="calendar" aria-label="Той салтанаты — 11 Желтоқсан 2026 жыл">
-          <p class="section-title calendar-month">Той салтанаты</p>
+          <div class="calendar-heading">
+            <p class="calendar-family" data-reveal style="--reveal-delay: 30ms">Аяулы анамыздың</p>
+            <p class="section-title calendar-month">Той салтанаты</p>
+            <p class="calendar-event-date" data-reveal style="--reveal-delay: 130ms">11 Желтоқсан 2026 жыл</p>
+            <p class="calendar-event-time" data-reveal style="--reveal-delay: 190ms">Сағат 16:00</p>
+          </div>
           <span id="calendarMonth" hidden></span>
-          <p class="calendar-event-date">11 Желтоқсан 2026 жыл</p>
-          <p class="calendar-event-time">Сағат 16:00</p>
           <div class="calendar-grid" aria-label="Желтоқсан айының күндері">
             <div class="weekdays" aria-hidden="true">
               <span>ДС</span><span>СС</span><span>СР</span><span>БС</span><span>ЖМ</span><span>СН</span><span>ЖС</span>
