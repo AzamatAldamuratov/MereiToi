@@ -115,8 +115,10 @@ html.opening-active, body.opening-active { overflow: hidden; }
 .invitation-copy p + p { margin-top: 18px; }
 .family-signoff { position: static; margin: 0; font-size: 64px; line-height: 1; text-align: center; }
 
-.calendar-month { position: absolute; left: 329px; top: 1305px; width: 342px; height: 99px; margin: 0; color: var(--warm-ink); font-size: 128px; line-height: 1; text-align: center; white-space: nowrap; }
-.calendar-grid { position: absolute; left: 233px; top: 1415px; width: 530px; height: 304px; font-family: "KZ Balmoral", "Great Vibes", cursive; }
+.calendar-month { position: absolute; left: 190px; top: 1200px; width: 620px; height: 92px; margin: 0; color: var(--warm-ink); font-size: 108px; line-height: 1; text-align: center; white-space: nowrap; }
+.calendar-event-date { position: absolute; left: 90px; top: 1300px; width: 820px; height: 60px; margin: 0; color: var(--ink); font-family: "KZ Balmoral", "Great Vibes", cursive; font-size: 64px; font-weight: 400; line-height: 1; text-align: center; white-space: nowrap; }
+.calendar-event-time { position: absolute; left: 150px; top: 1365px; width: 700px; height: 54px; margin: 0; color: var(--ink); font-family: "KZ Balmoral", "Great Vibes", cursive; font-size: 56px; line-height: 1; text-align: center; white-space: nowrap; }
+.calendar-grid { position: absolute; left: 233px; top: 1435px; width: 530px; height: 304px; font-family: "KZ Balmoral", "Great Vibes", cursive; }
 .weekdays {
   position: absolute; left: 11px; top: -3px; width: 512px; height: 64px; border: 1px solid var(--ink); border-radius: 32px;
   display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); align-items: center;
@@ -132,7 +134,7 @@ html.opening-active, body.opening-active { overflow: hidden; }
 .event-day img { position: absolute; z-index: 0; width: 43px; height: 34px; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 
 .countdown {
-  position: absolute; left: 175px; top: 1765px; width: 650px; min-height: 180px;
+  position: absolute; left: 175px; top: 1785px; width: 650px; min-height: 180px;
   color: var(--ink); text-align: center; font-family: "KZ Balmoral", "Great Vibes", cursive;
 }
 .countdown h2 { margin: 0 0 14px; color: var(--warm-ink); font-size: 58px; font-weight: 400; line-height: 1; }
