@@ -148,8 +148,10 @@ html.opening-active, body.opening-active { overflow: hidden; }
 
 .venue-title { position: absolute; left: 288px; top: 2060px; width: 425px; height: 91px; margin: 0; color: var(--warm-ink); font-size: 128px; line-height: 1; text-align: center; white-space: nowrap; }
 .venue-address { position: absolute; left: 285px; top: 2170px; width: 429px; height: 174px; margin: 0; font-size: 56px; line-height: 1.035; text-align: center; }
-.venue-address-location { display: contents; }
-.venue-address-location > span, .venue-restaurant { display: block; }
+.venue-address-location { display: flex; flex-wrap: nowrap; align-items: baseline; justify-content: center; gap: 8px; white-space: nowrap; font-size: 46px; }
+.venue-address-location > span { display: inline; }
+.venue-restaurant { display: block; }
+.venue-city::after { content: ","; }
 .venue-hint { position: absolute; left: 194px; top: 2344px; width: 645px; height: 63px; margin: 0; font-size: 56px; line-height: 1.12; text-align: center; white-space: nowrap; }
 .pill-button {
   display: flex; align-items: center; justify-content: center; border: 0; border-radius: 100px;
@@ -316,9 +318,8 @@ body.invitation-open .site-shell { visibility: visible; opacity: 1; transform: t
   }
   .venue-title { position: relative; inset: auto; width: 100%; height: auto; font-size: clamp(42px, 11.5vw, 58px); line-height: 1.18; white-space: normal; }
   .venue-address { position: relative; inset: auto; width: 100%; height: auto; font-size: clamp(24px, 6.5vw, 31px); line-height: 1.42; }
-  .venue-address-location { display: flex; flex-wrap: nowrap; align-items: baseline; justify-content: center; gap: clamp(4px, 1.2vw, 8px); margin-bottom: .12em; white-space: nowrap; font-size: clamp(15px, 4vw, 17px); }
+  .venue-address-location { gap: clamp(4px, 1.2vw, 8px); margin-bottom: .12em; font-size: clamp(15px, 4vw, 17px); }
   .venue-address-location > span { display: inline; }
-  .venue-city::after { content: ","; }
   .venue-hint { position: relative; inset: auto; width: 100%; height: auto; font-size: clamp(19px, 5.2vw, 24px); line-height: 1.38; white-space: normal; }
   .map-button {
     position: relative; inset: auto; width: min(100%, 190px); height: auto; min-height: 44px;
