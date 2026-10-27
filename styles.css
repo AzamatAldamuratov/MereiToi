@@ -230,18 +230,18 @@ body.invitation-open .site-shell { visibility: visible; opacity: 1; transform: t
 }
 
 @media (max-width: 700px) {
-  .welcome { top: 320px; left: 50px; width: 900px; row-gap: 24px; }
-  .invitation-copy { font-size: 74px; line-height: 1.16; }
+  .welcome { top: 320px; left: 40px; width: 920px; row-gap: 24px; }
+  .invitation-copy { font-size: 80px; line-height: 1.16; }
   .invitation-copy p { line-height: 1.16; }
   .invitation-copy p + p { margin-top: 22px; }
-  .family-signoff { font-size: 68px; line-height: 1.08; }
+  .family-signoff { font-size: 72px; line-height: 1.08; }
   .calendar-heading { row-gap: 16px; }
-  .calendar-month { font-size: 116px; line-height: 1.08; }
-  .calendar-event-date { font-size: 72px; line-height: 1.1; }
-  .calendar-event-time { font-size: 64px; line-height: 1.1; }
-  .calendar-grid { top: 1465px; height: 324px; }
-  .weekdays { font-size: 36px; }
-  .days { height: 230px; grid-template-rows: repeat(5, 46px); font-size: 40px; line-height: 46px; }
+  .calendar-month { font-size: 122px; line-height: 1.08; }
+  .calendar-event-date { font-size: 78px; line-height: 1.1; }
+  .calendar-event-time { font-size: 68px; line-height: 1.1; }
+  .calendar-grid { top: 1475px; height: 324px; }
+  .weekdays { font-size: 39px; }
+  .days { height: 230px; grid-template-rows: repeat(5, 46px); font-size: 43px; line-height: 46px; }
   .days li { height: 46px; }
   .paper-layer--footer { height: 1200px; }
   .rsvp-form { left: 170px; top: 2787px; width: 660px; height: 900px; }
@@ -255,24 +255,24 @@ body.invitation-open .site-shell { visibility: visible; opacity: 1; transform: t
   .attendance-choice img { width: 52px; height: 52px; flex-basis: 52px; }
   .attendance-choice input:checked + img { box-shadow: inset 0 0 0 12px #fff; }
   .submit-button { left: 212px; top: 670px; width: 236px; height: 150px; border-radius: 70px; font-size: 38px; }
-  .form-status { left: 0; top: 834px; width: 660px; font-size: 40px; }
-  .map-button { left: 180px; top: 2480px; width: 640px; height: 140px; font-size: 46px; }
+  .form-status { left: 0; top: 834px; width: 660px; font-size: 42px; }
+  .map-button { left: 180px; top: 2488px; width: 640px; height: 140px; font-size: 50px; }
   .opening-card h1 { font-size: clamp(72px, 19vw, 88px); }
   .rsvp-title { top: 2635px; height: 296px; padding: 10px 0 16px; font-size: 108px; line-height: 1.2; white-space: normal; }
   .rsvp-title-break { display: block; }
   .rsvp-form { top: 2955px; }
   .guest-label { font-size: 30px; }
-  .guest-input-wrap input { font-size: 46px; }
-  .attendance-choice { font-size: 46px; }
-  .submit-button { font-size: 46px; }
+  .guest-input-wrap input { font-size: 50px; }
+  .attendance-choice { font-size: 50px; }
+  .submit-button { font-size: 50px; }
   .countdown { top: 1835px; left: 175px; width: 650px; }
-  .countdown h2 { font-size: 64px; }
+  .countdown h2 { margin-bottom: 10px; font-size: 68px; }
   .countdown-unit { min-width: 88px; }
   .countdown-units { gap: 7px; }
-  .countdown-unit span { font-size: 64px; }
-  .countdown-unit small { font-size: 64px; }
-  .venue-address { left: 260px; top: 2170px; width: 480px; height: 210px; font-size: 62px; line-height: 1.08; }
-  .venue-hint { left: 130px; top: 2390px; width: 740px; height: 80px; font-size: 60px; line-height: 1.15; white-space: normal; }
+  .countdown-unit span { font-size: 68px; }
+  .countdown-unit small { font-size: 68px; }
+  .venue-address { left: 250px; top: 2170px; width: 500px; height: 220px; font-size: 66px; line-height: 1.08; }
+  .venue-hint { left: 130px; top: 2400px; width: 740px; height: 78px; font-size: 64px; line-height: 1.15; white-space: normal; }
   .music-toggle { width: 48px; min-width: 48px; min-height: 48px; padding: 0; }
   .music-toggle-label { display: none; }
   .opening-screen::before { inset: 10px; border-radius: 25px; }
