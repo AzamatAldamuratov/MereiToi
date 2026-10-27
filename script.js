@@ -1,7 +1,6 @@
 (() => {
   const designWidth = 1000;
   const desktopDesignHeight = 3204;
-  const mobileDesignHeight = 4270;
   const event = {
     year: 2026,
     month: 12,
@@ -30,12 +29,18 @@
 
   const fitCanvas = () => {
     const viewportWidth = document.documentElement.clientWidth || shell.clientWidth;
+    if (viewportWidth <= 900) {
+      document.documentElement.style.setProperty('--canvas-scale', '1');
+      shell.style.removeProperty('width');
+      shell.style.removeProperty('height');
+      canvas.style.removeProperty('height');
+      return;
+    }
     const scale = Math.min(1, viewportWidth / designWidth);
-    const designHeight = viewportWidth <= 700 ? mobileDesignHeight : desktopDesignHeight;
     document.documentElement.style.setProperty('--canvas-scale', String(scale));
     shell.style.width = `${viewportWidth}px`;
-    canvas.style.height = `${designHeight}px`;
-    shell.style.height = `${designHeight * scale}px`;
+    canvas.style.height = `${desktopDesignHeight}px`;
+    shell.style.height = `${desktopDesignHeight * scale}px`;
   };
 
   const wallTimeToEpoch = ({ year, month, day, hour, minute, timeZone }) => {
@@ -139,17 +144,53 @@
   });
 
   const startRevealAnimations = () => {
-    if (revealStarted || !('IntersectionObserver' in window)) return;
+    if (revealStarted) return;
     revealStarted = true;
+    const targets = [...document.querySelectorAll('[data-reveal]')];
     document.documentElement.classList.add('reveal-ready');
-    const observer = new IntersectionObserver((entries) => {
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach((element) => element.classList.add('is-visible'));
+      return;
+    }
+
+    const pending = new Set(targets);
+    let observer;
+    let fallbackFrame = 0;
+    const stopFallback = () => {
+      if (pending.size) return;
+      window.removeEventListener('scroll', schedulePassedCheck);
+      window.removeEventListener('resize', schedulePassedCheck);
+      observer.disconnect();
+      if (fallbackFrame) window.cancelAnimationFrame(fallbackFrame);
+    };
+    const reveal = (element) => {
+      if (!pending.delete(element)) return;
+      element.classList.add('is-visible');
+      observer.unobserve(element);
+      stopFallback();
+    };
+    observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+        reveal(entry.target);
       });
-    }, { threshold: 0, rootMargin: '0px 0px -6% 0px' });
-    document.querySelectorAll('[data-reveal]').forEach((element) => observer.observe(element));
+    }, { threshold: 0, rootMargin: '0px 0px 8% 0px' });
+    const revealPassedTargets = () => {
+      fallbackFrame = 0;
+      const viewportBottom = window.scrollY + window.innerHeight * 1.08;
+      pending.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top + window.scrollY;
+        if (elementTop <= viewportBottom) reveal(element);
+      });
+    };
+    const schedulePassedCheck = () => {
+      if (fallbackFrame || !pending.size) return;
+      fallbackFrame = window.requestAnimationFrame(revealPassedTargets);
+    };
+    targets.forEach((element) => observer.observe(element));
+    window.addEventListener('scroll', schedulePassedCheck, { passive: true });
+    window.addEventListener('resize', schedulePassedCheck, { passive: true });
+    schedulePassedCheck();
   };
 
   const openInvitation = () => {
