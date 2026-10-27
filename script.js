@@ -12,7 +12,7 @@
   const MUSIC_TRACK_URL = './fdf0540ad697f872d3c43b75ba477dc6_GI4Gf2gK.mp3';
   // Direct Telegram integration, matching the working reference page.
   const TELEGRAM_BOT_TOKEN = '8963644913:AAFFBH9GkXueN-RoDCrlK4BICdR2Av9weow';
-  const TELEGRAM_CHAT_ID = '7612121485';
+  const TELEGRAM_CHAT_IDS = ['7612121485', '5719005999'];
 
   const shell = document.getElementById('siteShell');
   const canvas = document.getElementById('invitationCanvas');
@@ -257,13 +257,16 @@
     status.textContent = 'Жауабыңыз жіберіліп жатыр…';
     status.classList.add('is-visible');
     try {
-      const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: message }),
-      });
-      const result = await response.json();
-      if (!response.ok || result?.ok !== true) throw new Error('Telegram rejected the RSVP');
+      const deliveryResults = await Promise.all(TELEGRAM_CHAT_IDS.map(async (chatId) => {
+        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: chatId, text: message }),
+        });
+        const result = await response.json();
+        return response.ok && result?.ok === true;
+      }));
+      if (deliveryResults.some((delivered) => !delivered)) throw new Error('Telegram rejected the RSVP');
       status.textContent = 'Рақмет! Жауабыңыз жіберілді.';
       form.reset();
     } catch {
