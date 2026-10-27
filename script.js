@@ -1,7 +1,7 @@
 (() => {
   const designWidth = 1000;
   const desktopDesignHeight = 3204;
-  const mobileDesignHeight = 3841;
+  const mobileDesignHeight = 4270;
   const event = {
     year: 2026,
     month: 12,
