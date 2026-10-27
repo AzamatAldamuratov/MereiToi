@@ -116,7 +116,6 @@ html.opening-active, body.opening-active { overflow: hidden; }
 .family-signoff { position: static; margin: 0; font-size: 64px; line-height: 1; text-align: center; }
 
 .calendar-heading { position: absolute; z-index: 2; top: 1110px; left: 0; display: grid; width: 1000px; justify-items: center; row-gap: 8px; text-align: center; }
-.calendar-family { margin: 0; color: var(--ink); font: 400 54px/1 "KZ Balmoral", "Great Vibes", cursive; }
 .calendar-month { position: static; width: 100%; height: auto; margin: 0; color: var(--warm-ink); font-size: 108px; line-height: 1; text-align: center; white-space: nowrap; }
 .calendar-event-date { position: static; width: 92%; height: auto; margin: 0; color: var(--ink); font-family: "KZ Balmoral", "Great Vibes", cursive; font-size: 64px; font-weight: 400; line-height: 1; text-align: center; white-space: nowrap; }
 .calendar-event-time { position: static; width: 100%; height: auto; margin: 0; color: var(--ink); font-family: "KZ Balmoral", "Great Vibes", cursive; font-size: 56px; line-height: 1; text-align: center; white-space: nowrap; }
