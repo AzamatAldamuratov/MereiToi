@@ -193,7 +193,7 @@ html.opening-active, body.opening-active { overflow: hidden; }
 .opening-card { position: relative; display: grid; justify-items: center; width: min(100%, 430px); padding: 35px 24px; text-align: center; }
 .opening-flower { width: 190px; height: 190px; object-fit: contain; opacity: .78; transform-origin: center; transition: opacity 700ms ease, transform 900ms cubic-bezier(.22,.8,.2,1); }
 .opening-couple { width: min(calc(100% + 64px), calc(100vw - 32px)); margin: 0 0 -2px; color: var(--warm-ink); font: 400 clamp(90px, 7.5vw, 96px)/1 "Great Vibes", "KZ Balmoral", cursive; text-wrap: balance; transition: opacity 620ms ease 100ms, transform 780ms cubic-bezier(.22,.8,.2,1) 100ms; }
-.opening-card h1 { margin: 12px 0 0; color: var(--ink); font: 400 clamp(60px, 17vw, 82px)/1 "Great Vibes", "KZ Balmoral", cursive; }
+.opening-card h1 { width: min(100%, 360px); margin: 12px 0 0; color: var(--ink); font: 400 clamp(60px, 17vw, 82px)/1 "Great Vibes", "KZ Balmoral", cursive; }
 .open-invitation { margin-top: 27px; }
 .opening-card h1 { transition: opacity 650ms ease, transform 820ms cubic-bezier(.22,.8,.2,1); }
 .opening-card h1 { transition-delay: 170ms; }
