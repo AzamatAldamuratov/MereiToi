@@ -192,6 +192,7 @@ html.opening-active, body.opening-active { overflow: hidden; }
 .opening-screen::before { position: absolute; inset: 14px; border: 1px solid rgba(78,66,66,.6); border-radius: 34px; content: ""; pointer-events: none; }
 .opening-card { position: relative; display: grid; justify-items: center; width: min(100%, 430px); padding: 35px 24px; text-align: center; }
 .opening-flower { width: 190px; height: 190px; object-fit: contain; opacity: .78; transform-origin: center; transition: opacity 700ms ease, transform 900ms cubic-bezier(.22,.8,.2,1); }
+.opening-couple { margin: 0 0 -2px; color: var(--warm-ink); font: 400 clamp(28px, 8vw, 40px)/1.2 "KZ Balmoral", "Great Vibes", cursive; transition: opacity 620ms ease 100ms, transform 780ms cubic-bezier(.22,.8,.2,1) 100ms; }
 .opening-card h1 { margin: 12px 0 0; color: var(--ink); font: 400 clamp(60px, 17vw, 82px)/1 "Great Vibes", "KZ Balmoral", cursive; }
 .open-invitation { margin-top: 27px; }
 .opening-card h1 { transition: opacity 650ms ease, transform 820ms cubic-bezier(.22,.8,.2,1); }
@@ -201,6 +202,7 @@ html.opening-active, body.opening-active { overflow: hidden; }
 .open-invitation:focus-visible { outline: 3px solid var(--warm-ink); outline-offset: 4px; }
 .opening-screen.is-opening { opacity: 0; visibility: hidden; pointer-events: none; transform: scale(1.015); }
 .opening-screen.is-opening .opening-flower { opacity: 0; transform: translate3d(0,-18px,0) scale(.9); }
+.opening-screen.is-opening .opening-couple { opacity: 0; transform: translate3d(0,-12px,0); }
 .opening-screen.is-opening .opening-card h1 { opacity: 0; transform: translate3d(0,-18px,0); }
 .opening-screen.is-opening .open-invitation { opacity: 0; transform: translate3d(0,12px,0) scale(.97); }
 .music-toggle {
@@ -246,6 +248,7 @@ body.invitation-open .site-shell { visibility: visible; opacity: 1; transform: t
   body.invitation-open .site-shell { transform: none !important; }
   .opening-screen { transition: opacity 760ms ease, visibility 760ms ease !important; transform: none !important; }
   .opening-screen.is-opening .opening-flower,
+  .opening-screen.is-opening .opening-couple,
   .opening-screen.is-opening .opening-card h1,
   .opening-screen.is-opening .open-invitation { transform: none !important; opacity: 0; transition: opacity 560ms ease !important; transition-delay: 0ms !important; }
   .reveal-ready [data-reveal] { opacity: 0; transform: none !important; transition: opacity 760ms ease !important; transition-delay: 0ms !important; }
