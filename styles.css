@@ -190,9 +190,9 @@ html.opening-active, body.opening-active { overflow: hidden; }
   transition: opacity 1100ms cubic-bezier(.16,1,.3,1), visibility 1100ms ease, transform 1300ms cubic-bezier(.16,1,.3,1);
 }
 .opening-screen::before { position: absolute; inset: 14px; border: 1px solid rgba(78,66,66,.6); border-radius: 34px; content: ""; pointer-events: none; }
-.opening-card { position: relative; display: grid; justify-items: center; width: min(100%, 430px); padding: 35px 24px; text-align: center; }
+.opening-card { position: relative; display: grid; justify-items: center; width: min(100%, 500px); padding: 35px 24px; text-align: center; }
 .opening-flower { width: 190px; height: 190px; object-fit: contain; opacity: .78; transform-origin: center; transition: opacity 700ms ease, transform 900ms cubic-bezier(.22,.8,.2,1); }
-.opening-couple { width: 100%; margin: 0 0 -2px; color: var(--warm-ink); font: 400 clamp(60px, 17vw, 82px)/1 "Great Vibes", "KZ Balmoral", cursive; text-wrap: balance; transition: opacity 620ms ease 100ms, transform 780ms cubic-bezier(.22,.8,.2,1) 100ms; }
+.opening-couple { width: 100%; margin: 0 0 -2px; color: var(--warm-ink); font: 400 clamp(90px, 7.5vw, 96px)/1 "Great Vibes", "KZ Balmoral", cursive; text-wrap: balance; transition: opacity 620ms ease 100ms, transform 780ms cubic-bezier(.22,.8,.2,1) 100ms; }
 .opening-card h1 { margin: 12px 0 0; color: var(--ink); font: 400 clamp(60px, 17vw, 82px)/1 "Great Vibes", "KZ Balmoral", cursive; }
 .open-invitation { margin-top: 27px; }
 .opening-card h1 { transition: opacity 650ms ease, transform 820ms cubic-bezier(.22,.8,.2,1); }
@@ -363,9 +363,9 @@ body.invitation-open .site-shell { visibility: visible; opacity: 1; transform: t
   .music-toggle { right: max(12px, env(safe-area-inset-right)); bottom: max(12px, env(safe-area-inset-bottom)); }
   .opening-screen { padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom)); }
   .opening-screen::before { inset: 10px; border-radius: 25px; }
-  .opening-card { width: min(100%, 430px); padding: clamp(22px, 7vw, 34px) 18px; }
+  .opening-card { width: min(100%, 430px); padding: clamp(22px, 7vw, 34px) clamp(8px, 2.5vw, 12px); }
   .opening-flower { width: clamp(145px, 43vw, 185px); height: clamp(145px, 43vw, 185px); }
-  .opening-couple { font-size: clamp(58px, 17vw, 76px); }
+  .opening-couple { font-size: clamp(62px, 19vw, 84px); }
   .opening-card h1 { font-size: clamp(58px, 17vw, 76px); }
   .open-invitation { min-width: min(185px, 100%); min-height: 46px; padding: 0 20px; }
 }
